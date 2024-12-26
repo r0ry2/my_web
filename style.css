@@ -1,0 +1,87 @@
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      height:80;
+    }
+    header {
+      background-color: #f7cad0;
+      font-size:30px;/*'نغير الخط */
+      padding: 10px 20px;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+      height: 45px;/*الشريط الي فوق */
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;/*هذا اذا بنزل الكلام لتحت او لفوق */
+      padding: 20px;
+      background-color: #ffe5ec;
+      height: 150px;/*هذا الي فوق الصوره*/
+    }
+    .navbar .logo {
+      font-size: 40px;/* Crochet Rory Store  */
+      font-weight: bold;
+      color: #f08080;
+      
+    }
+    .navbar ul {
+        list-style: none;
+        display: flex; /* جعل القائمة تستخدم flexbox */
+        align-items: flex-end; /* محاذاة العناصر لأسفل */
+        margin: 0;
+        padding: 0;
+      }
+      
+      
+    .navbar ul li {
+      margin: 0 50px;/*التباعد بين الكلمات*/
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .navbar ul li a:hover {
+      color: #f08080;
+    }
+    .hero {
+        text-align: center;
+        background-image: url('cat.jpg'); /* هنا احط الصوره */
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 50px 20px;
+        height: 290px; /* أو أي قيمة تناسبك */
+      }
+      
+    .hero h1 {
+      font-size: 60px;/*هذا حق Shop Our Bestseller
+      */
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 23px;/*هذا حق Find your favorite handmade crochet items!*/
+      margin-bottom: 20px;
+    }
+    .hero button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #511c1c;/*لون الخط حق الزر*/
+      background-color: #d471b0;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .hero button:hover {
+      background-color: #ff9999;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #ffe5ec;
+      color: #333;
+    }
