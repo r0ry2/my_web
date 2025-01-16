@@ -1,87 +1,295 @@
- body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      height:80;
-    }
-    header {
-      background-color: #f7cad0;
-      font-size:30px;/*'نغير الخط */
-      padding: 10px 20px;
-      text-align: center;
-      color: #fff;
-      font-weight: bold;
-      height: 45px;/*الشريط الي فوق */
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;/*هذا اذا بنزل الكلام لتحت او لفوق */
-      padding: 20px;
-      background-color: #ffe5ec;
-      height: 150px;/*هذا الي فوق الصوره*/
-    }
-    .navbar .logo {
-      font-size: 40px;/* Crochet Rory Store  */
-      font-weight: bold;
-      color: #f08080;
-      
-    }
-    .navbar ul {
-        list-style: none;
-        display: flex; /* جعل القائمة تستخدم flexbox */
-        align-items: flex-end; /* محاذاة العناصر لأسفل */
-        margin: 0;
-        padding: 0;
-      }
-      
-      
-    .navbar ul li {
-      margin: 0 50px;/*التباعد بين الكلمات*/
-    }
-    .navbar ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    .navbar ul li a:hover {
-      color: #f08080;
-    }
-    .hero {
-        text-align: center;
-        background-image: url('cat.jpg'); /* هنا احط الصوره */
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        padding: 50px 20px;
-        height: 290px; /* أو أي قيمة تناسبك */
-      }
-      
-    .hero h1 {
-      font-size: 60px;/*هذا حق Shop Our Bestseller
-      */
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 23px;/*هذا حق Find your favorite handmade crochet items!*/
-      margin-bottom: 20px;
-    }
-    .hero button {
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #511c1c;/*لون الخط حق الزر*/
-      background-color: #d471b0;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .hero button:hover {
-      background-color: #ff9999;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #ffe5ec;
-      color: #333;
-    }
+header {
+  background-color: #f7cad0; /* الشريط الاعلى */
+  font-size: 20px;
+  padding: 0;
+  text-align: center;
+  color: #0a0a0a;
+  font-weight: bold;
+  height: 30px;
+}
+
+/*----------------------------------*/
+
+.navbar {
+  display: flex;
+  flex-direction: column; /* نغير إلى عمودي لتمركز النص فوق القوائم */
+  justify-content: center; /* لضمان تمركز العناصر عموديًا */
+  align-items: center; /* تمركز العناصر أفقيًا */
+  background-color: #ffe5ec;
+  height: 200px;
+}
+
+.navbar .logo {
+  font-size: 60px; /* حجم الخط للنص */
+  font-weight: bold;
+  color: #f08080;
+  margin-bottom: 20px; /* لتفادي التصاق النص بالقائمة */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+  list-style: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 80px; /* لضبط المسافة بين القوائم */
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #0f0f0f;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  color: #f08080;
+}
+
+/*-----------------------------------------------*/
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero_image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* يضيف تأثير الظل للنص */
+}
+
+.hero h1 {
+  color: #ddd;
+  font-size: 80px;
+  white-space: nowrap; /* هذا يخلي الكلمه في سطر واحد */
+}
+
+.hero button {
+  padding: 10px 20px; /* الحدود التي تحيط بالنص */
+  background-color: #ef6bd4; /* اختيار لون مناسب للزر */
+  border: 3px solid rgb(237, 58, 153);
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.hero button:hover { /* لون */
+  background-color: #ea09a241;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  height: 20px;
+  background-color: #f7cad0;
+  color: #333;
+}
+
+/*--------------------------------------*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+#about-me {
+  background: linear-gradient(to right, #ffbae8, #ffc3a0);
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px; /* زيادة العرض ليتسع المحتوى بشكل جيد */
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between; /* وضع الصورة والنص في الجهتين المتقابلتين */
+  align-items: center;
+  text-align: left; /* لجعل النص يبدأ من اليسار */
+}
+
+.about-image {
+  width: 45%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-right: 20px; /* مسافة بين الصورة والنص */
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  width: 50%; /* تحديد عرض النص */
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product h2 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.product p {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.product .price {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+
+.product .rating {
+  font-size: 16px;
+  color: gold;
+  margin: 5px 0;
+}
+
+.product button {
+  background-color: #ff79c6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.product button:hover {
+  background-color: #ff6bb3;
+}
+
+/* زر العودة للأعلى */
+#goToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff79c6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: none; /* مخفي في البداية */
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#goToTopBtn:hover {
+  background-color: #e28e8e;
+}
+
+/* قائمة البرجر */
+.burger-menu {
+  display: none; /* مخفي افتراضيًا */
+  flex-direction: column;
+  background-color: #ffe5ec;
+  padding: 10px;
+  border-radius: 10px;
+}
+.burger-menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 0;
+}
+
+/* زر البرجر */
+.burger-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin: 10px;
+}
+
+/* لجعل البرجر يظهر في الأجهزة الصغيرة */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+  .burger-btn {
+    display: block;
+  }
+}
+
+/* نموذج الاتصال */
+#contact-form {
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7cad0;
+}
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#contact-form button {
+  background-color: #ff79c6;
+  color: white;
+  cursor: pointer;
+}
+#contact-form button:hover {
+  background-color: #e28e8e;
+}
+
+/* عداد الزوار */
+#visitor-counter {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+
+

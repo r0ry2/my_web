@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crochet Rory Store</title>
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -15,17 +15,176 @@
     <ul>
       <li><a href="#free-pattern">Free Pattern</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#about-us">About Us</a></li>
+      <li><a href="#about-me">About me</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <section class="hero">
-    <h1>Shop Our Bestseller</h1>
-    <p>Find your favorite handmade crochet items!</p>
-    <button>Find your favorite</button>
-  </section>
+
+
+  
+  
+  <div class="hero">
+    <img src="images/cattt.jpg" alt="image" class="hero_image">
+    <div class="hero-content">
+      <h1>Shop Our Bestseller</h1>
+      <button id="findFavoriteBtn">Find your favorite</button>
+    </div>
+  </div>
+
+  <button id="goToTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:1000; background-color:#f5a623; color:white; border:none; border-radius:50%; width:50px; height:50px; font-size:20px; cursor:pointer;">↑</button>
+
+  <script>
+    // عند الضغط على الزر
+    document.getElementById("findFavoriteBtn").addEventListener("click", function() {
+      // انتقل إلى القسم مع التمرير السلس
+      document.getElementById("sectionـProduct").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // زر العودة للأعلى
+    const goToTopBtn = document.getElementById("goToTopBtn");
+    window.onscroll = function () {
+      if (window.scrollY > 100) {
+        goToTopBtn.style.display = "block";
+      } else {
+        goToTopBtn.style.display = "none";
+      }
+    };
+    goToTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+
   <footer>
     © 2024 Crochet Rory Store. All rights reserved.
   </footer>
+
+  <section id="about-me">
+    <div class="container">
+      <h2>✨ About Me ✨</h2>
+      <div class="about-content">
+        <img src="images/tu.jpg" alt="Crochet Art" class="about-image">
+        <p>
+          Welcome to [Rory]’s world, where craftsmanship meets authentic creativity. I’m [Reema], a passionate crocheter who enjoys transforming yarn into unique pieces of art. I started my crochet journey at a young age, and turned this hobby into a passion, then into a project that reflects my values and creativity. 
+          <br><br>
+          At [Rory's Shop], I believe that crochet is more than just a hobby; it's a form of self-expression, relaxation, and creativity. We are committed to providing high-quality, handmade crochet products that are beautiful and functional.
+          <br><br>
+          Whether you're looking for a cozy blanket, a stylish accessory, or a unique gift, my shop has something to suit your needs. I use only the finest yarns and pay attention to every detail, from stitch to finish.
+          <br><br>
+          I am so grateful for the opportunity to share my passion with you. Thank you for supporting my small business.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sectionـProduct">
+    <div class="product-grid">
+      <div class="product">
+        <img src="images/cat-claw-gloves.jpg" alt="Cat claw gloves">
+        <h2>Cat claw gloves</h2>
+        <p>Warm and cozy gloves in the shape of cute cat paws! Made with love from the finest wool to give you a soft touch and irresistible warmth on cold days.</p>
+        <p class="price">£12.75</p>
+        <div class="rating">★★★★★</div>
+        <button>Buy now</button>
+      </div>
+      <div class="product">
+        <img src="images/stitch-stuffed-doll.jpg" alt="Stitch Stuffed Doll">
+        <h2>Stitch Stuffed Doll</h2>
+        <p>Stitch Stuffed Doll Each piece is unique and lovingly handcrafted to be the perfect companion for children and adults.</p>
+        <p class="price">£33.7</p>
+        <div class="rating">★★★★★</div>
+        <button>Buy now</button>
+      </div>
+      <div class="product">
+        <img src="images/cats-halloween-designs.jpg" alt="Cats Halloween designs">
+        <h2>Cats Halloween designs</h2>
+        <p>Assortment of stuffed cats with Halloween designs! Each piece is a different shape.</p>
+        <p class="price">£22.88</p>
+        <div class="rating">★★★★★</div>
+        <button>Buy now</button>
+      </div>
+      <div class="product">
+        <img src="images/cat-family.jpg" alt="Cat family">
+        <h2>Cat family</h2>
+        <p>Stuffed cat family in different sizes and colors! Made of high-quality, child-safe materials, they are perfect for building your own cat collection.</p>
+        <p class="price">£15.8</p>
+        <div class="rating">★★★★★</div>
+        <button>Buy now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="free_pattren">
+    <div class="container">
+      <h1>Free Pattern</h1>
+      <div class="product-grid">
+        <div class="product">
+          <img src="images/dragon.jpg" alt="Pattern Babe Dragon">
+          <h2>Pattern Babe Dragon</h2>
+          <p class="price">£167.4</p>
+          <div class="stars">★★★★★</div>
+          <button>Order now</button>
+        </div>
+        <div class="product">
+          <img src="images/monkey.jpg" alt="Stuffed Monkey">
+          <h2>Stuffed Monkey</h2>
+          <p class="price">£33.9</p>
+          <div class="stars">★★★★★</div>
+          <button>Order now</button>
+        </div>
+        <div class="product">
+          <img src="images/bear.jpg" alt="Pattern Stuffed Bear">
+          <h2>Pattern Stuffed Bear</h2>
+          <p class="price">£120.4</p>
+          <div class="stars">★★★★★</div>
+          <button>Order now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact form </h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="button" id="submitForm">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2024 Crochet Rory Store. All rights reserved.
+  </footer>
+
+  <script>
+    // زر العودة للأعلى
+    const goToTopBtn = document.getElementById("goToTopBtn");
+    window.onscroll = function () {
+      if (window.scrollY > 100) {
+        goToTopBtn.style.display = "block";
+      } else {
+        goToTopBtn.style.display = "none";
+      }
+    };
+    goToTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    // تخزين قيم نموذج الاتصال
+    document.getElementById("submitForm").addEventListener("click", function () {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      console.log("Name:", name, "Email:", email, "Message:", message);
+      alert("Form submitted successfully!");
+    });
+
+    // عداد الزوار
+    const visitorCountElement = document.getElementById("visitorCount");
+    let visitorCount = localStorage.getItem("visitorCount") || 0;
+    visitorCount++;
+    localStorage.setItem("visitorCount", visitorCount);
+    visitorCountElement.textContent = visitorCount;
+  </script>
 </body>
 </html>
