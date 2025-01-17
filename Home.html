@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crochet Rory Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,6 +12,7 @@
     ✨ Use code: Rory for 2% off! ✨
   </header>
   <nav class="navbar">
+    
     <div class="logo">Crochet Rory Store</div>
     <ul>
       <li><a href="#free-pattern">Free Pattern</a></li>
@@ -20,9 +22,31 @@
     </ul>
   </nav>
 
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search...">
+    <button type="button" id="searchBtn">🔍</button>
+  </div>
+
+  <!-- القائمة المخفية في الجانب الأيمن -->
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#cart">سلة التسوق</a></li>
+    <li><a href="#shop">تسوق</a></li>
+    <li><a href="https://www.instagram.com" target="_blank">
+      <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+    </a></li>
+    <li><a href="https://www.tiktok.com" target="_blank">
+      <img src="images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a></li>
+  </ul>
+</div>
+
+<!-- الزر لفتح القائمة -->
+<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
 
   
-  
+
   <div class="hero">
     <img src="images/cattt.jpg" alt="image" class="hero_image">
     <div class="hero-content">
@@ -30,33 +54,11 @@
       <button id="findFavoriteBtn">Find your favorite</button>
     </div>
   </div>
+  <button id="goToTopBtn">↑</button>
 
-  <button id="goToTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:1000; background-color:#f5a623; color:white; border:none; border-radius:50%; width:50px; height:50px; font-size:20px; cursor:pointer;">↑</button>
+ 
 
-  <script>
-    // عند الضغط على الزر
-    document.getElementById("findFavoriteBtn").addEventListener("click", function() {
-      // انتقل إلى القسم مع التمرير السلس
-      document.getElementById("sectionـProduct").scrollIntoView({ behavior: "smooth" });
-    });
 
-    // زر العودة للأعلى
-    const goToTopBtn = document.getElementById("goToTopBtn");
-    window.onscroll = function () {
-      if (window.scrollY > 100) {
-        goToTopBtn.style.display = "block";
-      } else {
-        goToTopBtn.style.display = "none";
-      }
-    };
-    goToTopBtn.onclick = function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-  </script>
-
-  <footer>
-    © 2024 Crochet Rory Store. All rights reserved.
-  </footer>
 
   <section id="about-me">
     <div class="container">
@@ -75,6 +77,9 @@
       </div>
     </div>
   </section>
+
+
+
 
   <section id="sectionـProduct">
     <div class="product-grid">
@@ -113,6 +118,8 @@
     </div>
   </section>
 
+
+
   <section id="free_pattren">
     <div class="container">
       <h1>Free Pattern</h1>
@@ -142,6 +149,9 @@
     </div>
   </section>
 
+
+
+
   <section id="contact">
     <h2>Contact form </h2>
     <form id="contact-form">
@@ -152,39 +162,15 @@
     </form>
   </section>
 
+
+
   <footer>
     © 2024 Crochet Rory Store. All rights reserved.
   </footer>
 
-  <script>
-    // زر العودة للأعلى
-    const goToTopBtn = document.getElementById("goToTopBtn");
-    window.onscroll = function () {
-      if (window.scrollY > 100) {
-        goToTopBtn.style.display = "block";
-      } else {
-        goToTopBtn.style.display = "none";
-      }
-    };
-    goToTopBtn.onclick = function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+  
 
-    // تخزين قيم نموذج الاتصال
-    document.getElementById("submitForm").addEventListener("click", function () {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-      console.log("Name:", name, "Email:", email, "Message:", message);
-      alert("Form submitted successfully!");
-    });
+<script src="javascript.js"></script>
 
-    // عداد الزوار
-    const visitorCountElement = document.getElementById("visitorCount");
-    let visitorCount = localStorage.getItem("visitorCount") || 0;
-    visitorCount++;
-    localStorage.setItem("visitorCount", visitorCount);
-    visitorCountElement.textContent = visitorCount;
-  </script>
 </body>
 </html>
