@@ -34,31 +34,74 @@
 
 
 
-------------------------
+/*-----------------------------------------*/
 
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/*-----------------------------------------*/
 
-
+/* زر العودة للأعلى */
 #goToTopBtn {
-  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
-  background-color: #f5a623;
+  background-color: #ff79c6;
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
   cursor: pointer;
+  display: none; /* مخفي في البداية */
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#goToTopBtn:hover {
+  background-color: #e28e8e;
+}
+
+/*-----------------------------------------*/
+
+
+/* قائمة البرجر */
+.burger-menu {
+  display: none; /* مخفي افتراضيًا */
+  flex-direction: column;
+  background-color: #ffe5ec;
+  padding: 10px;
+  border-radius: 10px;
+}
+.burger-menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 0;
+}
+
+/* زر البرجر */
+.burger-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin: 10px;
+}
+
+/* لجعل البرجر يظهر في الأجهزة الصغيرة */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+  .burger-btn {
+    display: block;
+  }
 }
 
 
-
+/*-----------------------------------------*/
 header {
   background-color: #f7cad0; /* الشريط الاعلى */
   font-size: 20px;
@@ -132,7 +175,7 @@ header {
   right: 0;
 }
 
-
+/*-----------------------------------------*/
 
 .navbar {
   display: flex;
@@ -213,7 +256,7 @@ header {
   background-color: #ec5ed9;
 }
 
-
+/*-----------------------------------------*/
 
 .hero {
   position: relative;
@@ -266,26 +309,18 @@ header {
 footer {
   text-align: center;
   padding: 10px;
-  height: 20px;
+  height: 30px;
   background-color: #f7cad0;
   color: #333;
 }
 
-/*--------------------------------------*/
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-}
+/*------------------firstpage--------------------*/
 
 #about-me {
   background: linear-gradient(to right, #ffbae8, #ffc3a0);
   padding: 20px;
   text-align: center;
   font-family: "Playfair Display", serif;
-  
-  
 
 }
 
@@ -313,6 +348,10 @@ h2 {
   margin-right: 20px; /* مسافة بين الصورة والنص */
 }
 
+
+/*-------------------secund-------------------*/
+
+
 p {
   font-size: 1.2em;
   line-height: 1.6;
@@ -320,7 +359,6 @@ p {
   font-family: "DM Serif Display", serif;
 
 }
-
 .product-grid {
   display: flex;
   flex-wrap: wrap;
@@ -335,7 +373,7 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 250px;
-  padding: 15px;
+  padding: px;
   text-align: center;
 }
 
@@ -387,67 +425,11 @@ p {
 }
 
 
+/*---------------third-----------------------*/
 
 
 
 
-
-
-
-
-
-
-
-/* زر العودة للأعلى */
-#goToTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ff79c6;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  display: none; /* مخفي في البداية */
-  font-size: 14px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-#goToTopBtn:hover {
-  background-color: #e28e8e;
-}
-
-/* قائمة البرجر */
-.burger-menu {
-  display: none; /* مخفي افتراضيًا */
-  flex-direction: column;
-  background-color: #ffe5ec;
-  padding: 10px;
-  border-radius: 10px;
-}
-.burger-menu a {
-  text-decoration: none;
-  color: #333;
-  padding: 10px 0;
-}
-
-/* زر البرجر */
-.burger-btn {
-  display: none;
-  cursor: pointer;
-  font-size: 24px;
-  margin: 10px;
-}
-
-/* لجعل البرجر يظهر في الأجهزة الصغيرة */
-@media (max-width: 768px) {
-  .navbar ul {
-    display: none;
-  }
-  .burger-btn {
-    display: block;
-  }
-}
 
 
 
@@ -466,20 +448,6 @@ p {
   height: 700px;
 }
 
-container {
-  display: flex;
-  flex-direction: row-reverse; /* يجعل الصورة على اليمين والمحتوى على اليسار */
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .image {
   flex: 1;
   max-width: 50%;
@@ -496,17 +464,16 @@ container {
   color: #333;
 }
 
-.image-container {
-  flex: 1;
-  text-align: right;
-}
-
 .image-container img {
   width: 90%;
   border-radius: 10px;
   height: 600px;
 }
-
+.image-container img {
+  width: 90%;
+  border-radius: 10px;
+  height: 600px;
+}
 .text-container {
   flex: 1;
   padding: 20px;
@@ -556,105 +523,140 @@ container {
   background-color: #e85c7d;
 }
 
+/*----------------------------------------*/
 
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fce4ec;
-  margin: 0;
+
+
+
+
+
+
+
+
+#Shopping-cart {
   padding: 20px;
+  background-color: #fce4ec;
 }
 
 .product-section {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  padding: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #eb90d3;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px;
 }
 
 .product-section.reverse {
   flex-direction: row-reverse;
 }
 
-.text-container {
+.image-container {
   flex: 1;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 500px;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.text-container {
+  flex: 2;
+  padding: 0 100px;
+  padding-left: 200px;
+  padding-right: 0;
+  margin-left: 70px;
+
 }
 
 .text-container h2 {
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  margin: 50px;
+  padding-left: 50px;
+  margin-left: 70px;
+
 }
 
 .text-container p {
-  color: #555;
-  line-height: 1.6;
-  margin: 10px 0;
+  margin: 8px 0;
+  color: #666;
+  margin-left: 70px;
+
+  
 }
 
 .text-container .price {
+  font-size: 20px;
   font-weight: bold;
-  font-size: 24px;
   color: #000;
+  margin-top: 10px;
+  margin-left: 70px;
+
 }
 
-.rating {
+.text-container .rating {
   margin: 10px 0;
+  font-size: 18px;
+  color: #ffa726;
+  margin-left: 70px;
 }
 
 .quantity {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .quantity button {
-  padding: 5px 10px;
-  background-color: #ff6f91;
-  color: #fff;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  background: #f8bbd0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .quantity span {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .confirm-button {
+  display: block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ff6f91;
-  color: #fff;
+  margin-left: 70px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #f06292;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  text-align: center;
+  width: 200px;
+  height: 50px;
 }
 
 .confirm-button:hover {
-  background-color: #e85c7d;
-}
-
-.image-container {
-  flex: 1;
-  text-align: left;
-}
-
-.image-container img {
-  width: 90%;
-  border-radius: 10px;
+  background-color: #e91e63;
 }
 
 
-
-
+/*------------five-----------------------------*/
 
 /* نموذج الاتصال */
 #contact-form {
