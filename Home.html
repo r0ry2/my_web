@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crochet Rory Store</title>
-  <link rel="stylesheet" href="style.css">
-  
-  
-</head>
-<body>
-  <header>
-    ✨ Use code: Rory for 2% off! ✨
-  </header>
-  <nav class="navbar">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Rory Store</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+ 
+  <body>
+    <header>
+      ✨ Use code: Rory for 2% off! ✨
+    </header>
     
-    <div class="logo">Crochet Rory Store</div>
-    <ul>
-      <li><a href="#free-pattern">Free Pattern</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#about-me">About me</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav class="navbar">
+      <div class="logo">Crochet Rory Store</div>
+      <ul>
+        <li><a href="#free_pattren">Free Pattern</a></li> <!-- تغيير الرابط هنا -->
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about-me">About me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Search...">
-    <button type="button" id="searchBtn">🔍</button>
-  </div>
+    
+      <!-- إضافة صورة سلة التسوق هنا -->
+      <div class="cart-container">
+        <img src="images/cart-icon.png" alt="Shopping Cart" id="cart-icon" class="cart-icon" onclick="goToCart()">
+      </div>
+    </nav>
 
-  <!-- القائمة المخفية في الجانب الأيمن -->
+    <button onclick="scrollToTop()" id="goToTopBtn" title="Go to top">↑</button>
+
+  
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search...">
+      <button type="button" id="searchBtn">🔍</button>
+    </div>
+  
+   <!-- القائمة المخفية في الجانب الأيمن -->
 <div class="sidebar" id="sidebar">
   <ul>
     <li><a href="#home">Home</a></li>
@@ -44,19 +51,30 @@
   </ul>
 </div>
 
-<!-- الزر لفتح القائمة -->
-<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+<!-- زر لفتح القائمة -->
+<button onclick="toggleSidebar()" id="sidebarToggle" title="فتح القائمة">
+  &#9776; <!-- رمز للهمبرغر -->
+</button>
 
   
-
-  <div class="hero">
-    <img src="images/cattt.jpg" alt="image" class="hero_image">
-    <div class="hero-content">
-      <h1>Shop Our Bestseller</h1>
-      <button id="findFavoriteBtn">Find your favorite</button>
+    <div class="hero">
+      <img src="images/cattt.jpg" alt="image" class="hero_image">
+      <div class="hero-content">
+        <h1>Shop Our Bestseller</h1>
+        <button id="findFavoriteBtn">Find your favorite</button>
+      </div>
     </div>
-  </div>
-  <button id="goToTopBtn">↑</button>
+
+    <script>
+      // Function to navigate to shopping cart
+function goToCart() {
+    // إذا كنت تريد الانتقال إلى صفحة السلة:
+    window.location.href = "cart.html"; // تأكد من أن اسم الملف هو cart.html
+}
+
+    </script>
+  </body>
+  
 
 
   <!---------------------------firspage ------------------------------------>
@@ -120,70 +138,72 @@
       </div>
     </div>
   </section>
+  
 
   <!---------------------------thirdpage ------------------------------------>
-
-  
-
   <section id="free_pattren">
     <div class="container">
-      <h1>Free Pattern</h1>
-      <div class="product-grid">
-        <div class="product">
-          <img src="images/dragon.jpg" alt="Pattern Babe Dragon">
-          <h2>Pattern Babe Dragon</h2>
-          <p class="price">£167.4</p>
-          <div class="stars">★★★★★</div>
-          <button>Order now</button>
+        <h1>Free Pattern</h1>
+        <div class="productgrid">
+            <div class="product_i">
+                <img src="images/dragon.jpg" alt="Pattern Babe Dragon">
+                <h2>Pattern Babe Dragon</h2>
+                <p class="price">£167.4</p>
+                <div class="stars">★★★★★</div>
+                <button class="order-now" data-target="#Shopping-cart-dragon">Order now</button>
+            </div>
+            <div class="product_i">
+                <img src="images/monkey.jpg" alt="Stuffed Monkey">
+                <h2>Stuffed Monkey</h2>
+                <p class="price">£33.9</p>
+                <div class="stars">★★★★★</div>
+                <button class="order-now" data-target="#Shopping-cart-monkey">Order now</button>
+            </div>
+            <div class="product_i">
+                <img src="images/bear.jpg" alt="Pattern Stuffed Bear">
+                <h2>Pattern Stuffed Bear</h2>
+                <p class="price">£120.4</p>
+                <div class="stars">★★★★★</div>
+                <button class="order-now" data-target="#Shopping-cart-bear">Order now</button>
+            </div>
         </div>
-        <div class="product">
-          <img src="images/monkey.jpg" alt="Stuffed Monkey">
-          <h2>Stuffed Monkey</h2>
-          <p class="price">£33.9</p>
-          <div class="stars">★★★★★</div>
-          <button>Order now</button>
-        </div>
-        <div class="product">
-          <img src="images/bear.jpg" alt="Pattern Stuffed Bear">
-          <h2>Pattern Stuffed Bear</h2>
-          <p class="price">£120.4</p>
-          <div class="stars">★★★★★</div>
-          <button>Order now</button>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  
-  <!---------------------------fourthpage ------------------------------------>
+<section id="product-details">
+  <div class="product-section-dragon">
+      <div class="image-container-dragon">
+          <img src="images/dragon.jpg" alt="Cat Medal" id="product-image">
+      </div>
+      <div class="text-container-dragon">
+          <h2 id="product-name">Cat Medal</h2>
+          <p>Handmade Crochet Cat Pet Medallion</p>
+          <p class="price" id="product-price">200 TUB</p>
+          <div class="rating">
+              <span>⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="quantity-dragon">
+              <button id="decrease-quantity">-</button>
+              <span id="product-quantity">1</span>
+              <button id="increase-quantity">+</button>
+          </div>
+          <h3>Order Summary</h3>
+          <p>Product price: <span id="order-price">200 TUB</span></p>
+          <p>Delivery price: 10.1 TUB</p>
+          <p>Total price: <span id="total-price">210.1 TUB</span></p>
+          <button class="confirm-button-dragon" id="confirm-order">Confirm Order</button>
+      </div>
+  </div>
+</section>
+
 
 
 
  
- <section id="Orderـdetails">
- <div class="section">
-  <!-- قسم الصورة -->
-  <div class="image-container">
-    <img src="images/cats-halloween-designs.JPG" alt="Product Image">
-  </div>
 
-  <!-- قسم النص -->
-  <div class="text-container">
-    <h2>Rose bouquet</h2>
-    <p>
-      A charming handmade rose bouquet, perfect gift for Valentine's Day or any special occasion. Carefully woven rose petals exude femininity and delicacy.
-    </p>
-    <p class="price">£123.8</p>
-    <p>Available colors:</p>
-    <div class="color-options">
-      <span class="color" style="background-color: #c1a2f8;"></span>
-      <span class="color" style="background-color: #f8a2c8;"></span>
-      <span class="color" style="background-color: #ffebcc;"></span>
-      <span class="color" style="background-color: #b2a3a3;"></span>
-    </div>
-    <button class="order-button">Order Now</button>
-  </div>
-</div>
+
+
+
 
 
     <!---------------------------fivepage ------------------------------------>
@@ -224,6 +244,92 @@
 
 
 
+
+
+
+    <section id="cat_claw">
+      <div class="cat-claw-gloves">
+          <!-- قسم الصورة -->
+          <div class="image-container-claw-gloves">
+              <img src="images/cat-claw-gloves.jpg" alt="Cat Claw Gloves">
+          </div>
+          <!-- قسم النص -->
+          <div class="text-container-claw-gloves">
+              <h2>Cat Claw Gloves</h2>
+              <p>Handmade Crochet Cat Pet Medallion</p>
+              <p class="price">45 THB</p>
+              <div class="rating">
+                  <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="quantity-claw-gloves">
+                  <button class="quantity-btn">-</button>
+                  <span>3</span>
+                  <button class="quantity-btn">+</button>
+              </div>
+              <h3>Order Summary</h3>
+              <p>Product price: <span class="bold">45 THB</span></p>
+              <p>Delivery price: <span class="bold">10.1 THB</span></p>
+              <p>Total price: <span class="bold">55.1 THB</span></p>
+              <button class="confirm-button-claw-gloves">Confirm Order</button>
+          </div>
+      </div>
+  </section>
+  
+
+    <!------------------------------------>
+
+    <section id="reviews">
+      <div class="reviews">
+          <h1>Customers <span>Comments</span></h1>
+          <div class="comments">
+              <div class="comment">
+                  <div class="stars">★★★★★</div>
+                  <p>I bought a doll for my daughter, and she absolutely loves it.</p>
+                  <div class="name">- Sara</div>
+              </div>
+              <div class="comment">
+                  <div class="stars">★★★★★</div>
+                  <p>I bought a bouquet of flowers and gave it to my friend for her birthday. She loved it!</p>
+                  <div class="name">- Hana</div>
+              </div>
+              <div class="comment">
+                  <div class="stars">★★★★★</div>
+                  <p>I ordered a cat necklace for my school bag and haven't received it yet. I'm so excited, and I'm sure I'll love it!</p>
+                  <div class="name">- Riham</div>
+              </div>
+              <div class="comment">
+                <div class="stars">★★★★★</div>
+                <p>I ordered a cat necklace for my school bag and haven't received it yet. I'm so excited, and I'm sure I'll love it!</p>
+                <div class="name">- Riham</div>
+            </div>
+            <div class="comment">
+              <div class="stars">★★★★★</div>
+              <p>I ordered a cat necklace for my school bag and haven't received it yet. I'm so excited, and I'm sure I'll love it!</p>
+              <div class="name">- Riham</div>
+          </div>
+          <div class="comment">
+            <div class="stars">★★★★★</div>
+            <p>I ordered a cat necklace for my school bag and haven't received it yet. I'm so excited, and I'm sure I'll love it!</p>
+            <div class="name">- Riham</div>
+        </div>
+        <div class="comment">
+          <div class="stars">★★★★★</div>
+          <p>I ordered a cat necklace for my school bag and haven't received it yet. I'm so excited, and I'm sure I'll love it!</p>
+          <div class="name">- Riham</div>
+      </div>
+          </div>
+      </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
   <section id="contact">
     <h2>Contact form </h2>
     <form id="contact-form">
@@ -233,6 +339,10 @@
       <button type="button" id="submitForm">Submit</button>
     </form>
   </section>
+
+
+
+  <p id="visitor-count">عدد الزوار: 0</p>
 
 
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة التسوق</title>
+    <link rel="stylesheet" href="style_cart.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>سلة التسوق</h1>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>السعر</th>
+                    <th>الكمية</th>
+                    <th>الإجمالي</th>
+                    <th>إجراءات</th>
+                </tr>
+            </thead>
+            <tbody id="cart-body">
+                <!-- المنتجات ستضاف هنا باستخدام JavaScript -->
+            </tbody>
+        </table>
+        <div class="total">
+            <span>الإجمالي: </span><span id="total-price">0</span> ريال
+        </div>
+        <button id="checkout-btn">إتمام الشراء</button>
+
+        <!-- إضافة رابط للعودة إلى الصفحة الأولى -->
+        <div class="go-back">
+            <a href="Home.html">العودة إلى الصفحة الرئيسية</a>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
