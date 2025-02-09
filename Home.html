@@ -21,7 +21,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-    
+    <div id="cart-container"></div> <!-- هنا سيتم عرض محتويات السلة -->
+    <script src="cart.js"></script> <!-- إضافة ملف JavaScript لعرض السلة -->
       <!-- إضافة صورة سلة التسوق هنا -->
       <div class="cart-container">
         <img src="images/cart-icon.png" alt="Shopping Cart" id="cart-icon" class="cart-icon" onclick="goToCart()">
@@ -110,31 +111,32 @@ function goToCart() {
         <p>Warm and cozy gloves in the shape of cute cat paws! Made with love from the finest wool to give you a soft touch and irresistible warmth on cold days.</p>
         <p class="price">£12.75</p>
         <div class="rating">★★★★★</div>
-        <button>Buy now</button>
+        <button onclick="window.location.href='#cat-claw-gloves'">Buy now</button>
       </div>
       <div class="product">
         <img src="images/stitch-stuffed-doll.jpg" alt="Stitch Stuffed Doll">
         <h2>Stitch Stuffed Doll</h2>
         <p>Stitch Stuffed Doll Each piece is unique and lovingly handcrafted to be the perfect companion for children and adults.</p>
-        <p class="price">£33.7</p>
+        <p class="price">80 TUB</p>
         <div class="rating">★★★★★</div>
-        <button>Buy now</button>
+        <button onclick="window.location.href='#product-details-stitch-stuffed-doll'">Buy now</button>
+
       </div>
       <div class="product">
         <img src="images/cats-halloween-designs.jpg" alt="Cats Halloween designs">
         <h2>Cats Halloween designs</h2>
         <p>Assortment of stuffed cats with Halloween designs! Each piece is a different shape.</p>
-        <p class="price">£22.88</p>
+        <p class="price">55 TUB</p>
         <div class="rating">★★★★★</div>
-        <button>Buy now</button>
+        <button onclick="window.location.href='#cats-halloween-designs'">Buy now</button>
       </div>
       <div class="product">
         <img src="images/cat-family.jpg" alt="Cat family">
         <h2>Cat family</h2>
         <p>Stuffed cat family in different sizes and colors! Made of high-quality, child-safe materials, they are perfect for building your own cat collection.</p>
-        <p class="price">£15.8</p>
+        <p class="price">60 TUB</p>
         <div class="rating">★★★★★</div>
-        <button>Buy now</button>
+        <button onclick="window.location.href='#cat-family.'">Buy now</button>
       </div>
     </div>
   </section>
@@ -148,32 +150,35 @@ function goToCart() {
             <div class="product_i">
                 <img src="images/dragon.jpg" alt="Pattern Babe Dragon">
                 <h2>Pattern Babe Dragon</h2>
-                <p class="price">£167.4</p>
+                <p class="price">140.5 TUB</p>
                 <div class="stars">★★★★★</div>
-                <button class="order-now" data-target="#Shopping-cart-dragon">Order now</button>
-            </div>
+                <button onclick="window.location.href='#dragon'">Buy now</button>
+              </div>
             <div class="product_i">
                 <img src="images/monkey.jpg" alt="Stuffed Monkey">
                 <h2>Stuffed Monkey</h2>
-                <p class="price">£33.9</p>
+                <p class="price">120 TUB</p>
                 <div class="stars">★★★★★</div>
-                <button class="order-now" data-target="#Shopping-cart-monkey">Order now</button>
+                <button onclick="window.location.href='#monkey'">Buy now</button>
             </div>
             <div class="product_i">
                 <img src="images/bear.jpg" alt="Pattern Stuffed Bear">
                 <h2>Pattern Stuffed Bear</h2>
-                <p class="price">£120.4</p>
+                <p class="price">120.4 TUB</p>
                 <div class="stars">★★★★★</div>
-                <button class="order-now" data-target="#Shopping-cart-bear">Order now</button>
-            </div>
+                <button onclick="window.location.href='#bear'">Buy now</button>
+              </div>
         </div>
     </div>
 </section>
 
-<section id="product-details">
-  <div class="product-section-dragon">
+  <!---------------------------fourthpage  ------------------------------------>
+
+
+<section id="cat-claw-gloves">
+  <div class="product-section" data-name="Cat Medal" data-price="200" deliveryPrice = 10.1>
       <div class="image-container-dragon">
-          <img src="images/dragon.jpg" alt="Cat Medal" id="product-image">
+        <img src="images/cat-claw-gloves.jpg" alt="Cat Medal">
       </div>
       <div class="text-container-dragon">
           <h2 id="product-name">Cat Medal</h2>
@@ -184,22 +189,23 @@ function goToCart() {
           </div>
           <div class="quantity-dragon">
               <button id="decrease-quantity">-</button>
-              <span id="product-quantity">1</span>
+              <span id="product-quantity" data-quantity="1">1</span>
               <button id="increase-quantity">+</button>
           </div>
           <h3>Order Summary</h3>
-          <p>Product price: <span id="order-price">200 TUB</span></p>
-          <p>Delivery price: 10.1 TUB</p>
+          <p>Price: 200 TUB</p>
+          <p>Delivery price: <span id="delivery-price">10.1</span> TUB</p>
           <p>Total price: <span id="total-price">210.1 TUB</span></p>
-          <button class="confirm-button-dragon" id="confirm-order">Confirm Order</button>
-      </div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
   </div>
 </section>
 
 
 
 
- 
+
+
 
 
 
@@ -208,75 +214,184 @@ function goToCart() {
 
     <!---------------------------fivepage ------------------------------------>
 
-
-
-<section id="Shopping-cart">
-  <div class="product-section reverse">
-    <!-- قسم الصورة -->
-    <div class="image-container">
-      <img src="images/Cat_Medal.JPG" alt="Cat Medal">
-    </div>
-    <!-- قسم النص -->
-    <div class="text-container">
-      <h2>Cat Medal</h2>
-      <p>Handmade Crochet Cat Pet Medallion</p>
-      <p class="price">£30.9</p>
-      <div class="rating">
-        <span>⭐⭐⭐⭐⭐</span>
-      </div>
-      <div class="quantity">
-        <button>-</button>
-        <span>3</span>
-        <button>+</button>
-      </div>
-      <h3>Order Summary</h3>
-      <p>Product price: £30.9</p>
-      <p>Delivery price: £10.1</p>
-      <p>Total price: £40.0</p>
-      <button class="confirm-button">Confirm Order</button>
-    </div>
-  </div>
-  
-  </section>
-
-
-  <!---------------------------sexpage ------------------------------------>
-
-
-
-
-
-
-    <section id="cat_claw">
-      <div class="cat-claw-gloves">
-          <!-- قسم الصورة -->
-          <div class="image-container-claw-gloves">
-              <img src="images/cat-claw-gloves.jpg" alt="Cat Claw Gloves">
+    <section id="product-details-stitch-stuffed-doll">
+      <div class="product-section" data-name="stitch" data-price="80"  >
+        <div class="image-container-dragon">
+              <img src="images/stitch-stuffed-doll.jpg" alt="Cat Medal" id="product-image">
           </div>
-          <!-- قسم النص -->
-          <div class="text-container-claw-gloves">
-              <h2>Cat Claw Gloves</h2>
+          <div class="text-container-dragon">
+              <h2 id="product-name">stitch</h2>
               <p>Handmade Crochet Cat Pet Medallion</p>
-              <p class="price">45 THB</p>
+              <p class="price" id="product-price">80 TUB</p>
               <div class="rating">
                   <span>⭐⭐⭐⭐⭐</span>
               </div>
-              <div class="quantity-claw-gloves">
-                  <button class="quantity-btn">-</button>
-                  <span>3</span>
-                  <button class="quantity-btn">+</button>
+              <div class="quantity-dragon">
+                  <button id="decrease-quantity">-</button>
+                  <span id="product-quantity">1</span>
+                  <button id="increase-quantity">+</button>
               </div>
               <h3>Order Summary</h3>
-              <p>Product price: <span class="bold">45 THB</span></p>
-              <p>Delivery price: <span class="bold">10.1 THB</span></p>
-              <p>Total price: <span class="bold">55.1 THB</span></p>
-              <button class="confirm-button-claw-gloves">Confirm Order</button>
+              <p>Product price: <span id="order-price">80 TUB</span></p>
+              <p>Delivery price: 10.1 TUB</p>
+              <p>Total price: <span id="total-price">210.1 TUB</span></p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+      </div>
+    </section>
+
+
+  <!---------------------------sixpage ------------------------------------>
+
+
+
+
+
+
+    <section id="cats-halloween-designs">
+      <div class="product-section" data-name="stitch" data-price="80"  >
+        <div class="image-container-dragon">
+              <img src="images/cats-halloween-designs.jpg" alt="Cat Medal" id="product-image">
+          </div>
+          <div class="text-container-dragon">
+              <h2 id="product-name">Cat Medal</h2>
+              <p>Handmade Crochet Cat Pet Medallion</p>
+              <p class="price" id="product-price">55 TUB</p>
+              <div class="rating">
+                  <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="quantity-dragon">
+                  <button id="decrease-quantity">-</button>
+                  <span id="product-quantity">1</span>
+                  <button id="increase-quantity">+</button>
+              </div>
+              <h3>Order Summary</h3>
+              <p>Product price: <span id="order-price">55 TUB</span></p>
+              <p>Delivery price: 10.1 TUB</p>
+              <p>Total price: <span id="total-price">210.1 TUB</span></p>
+              <button class="add-to-cart">Add to Cart</button>
           </div>
       </div>
-  </section>
-  
+    </section>
 
-    <!------------------------------------>
+
+  <!---------------------------sevenpage ------------------------------------>
+
+    <section id="cat-family.">
+      <div class="product-section" data-name="stitch" data-price="80"  >
+        <div class="image-container-dragon">
+              <img src="images/cat-family.jpg" alt="Cat Medal" id="product-image">
+          </div>
+          <div class="text-container-dragon">
+              <h2 id="product-name">Cat Medal</h2>
+              <p>Handmade Crochet Cat Pet Medallion</p>
+              <p class="price" id="product-price">60 TUB</p>
+              <div class="rating">
+                  <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="quantity-dragon">
+                  <button id="decrease-quantity">-</button>
+                  <span id="product-quantity">1</span>
+                  <button id="increase-quantity">+</button>
+              </div>
+              <h3>Order Summary</h3>
+              <p>Product price: <span id="order-price">60 TUB</span></p>
+              <p>Delivery price: 10.1 TUB</p>
+              <p>Total price: <span id="total-price">210.1 TUB</span></p>
+              <button class="add-to-cart">Add to Cart</button>
+          </div>
+      </div>
+    </section>
+
+  <!---------------------------8 page ------------------------------------>
+
+    <section id="dragon">
+      <div class="product-section" data-name="stitch" data-price="80"  >
+        <div class="image-container-dragon">
+              <img src="images/dragon.jpg" alt="Cat Medal" id="product-image">
+          </div>
+          <div class="text-container-dragon">
+              <h2 id="product-name">dragon</h2>
+              <p>Handmade Crochet Cat Pet Medallion</p>
+              <p class="price" id="product-price">140.5 TUB</p>
+              <div class="rating">
+                  <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="quantity-dragon">
+                  <button id="decrease-quantity">-</button>
+                  <span id="product-quantity">1</span>
+                  <button id="increase-quantity">+</button>
+              </div>
+              <h3>Order Summary</h3>
+              <p>Product price: <span id="order-price">140.5 TUB</span></p>
+              <p>Delivery price: 10.1 TUB</p>
+              <p>Total price: <span id="total-price">210.1 TUB</span></p>
+              <button class="add-to-cart">Add to Cart</button>
+          </div>
+      </div>
+    </section>
+
+
+
+  <!--------------------------- 9 page ------------------------------------>
+
+
+
+    <section id="monkey">
+      <div class="product-section" data-name="stitch" data-price="80"  >
+        <div class="image-container-dragon">
+              <img src="images/monkey.jpg" alt="Cat Medal" id="product-image">
+          </div>
+          <div class="text-container-dragon">
+              <h2 id="product-name">monkey</h2>
+              <p>Handmade Crochet Cat Pet Medallion</p>
+              <p class="price" id="product-price">120 TUB</p>
+              <div class="rating">
+                  <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="quantity-dragon">
+                  <button id="decrease-quantity">-</button>
+                  <span id="product-quantity">1</span>
+                  <button id="increase-quantity">+</button>
+              </div>
+              <h3>Order Summary</h3>
+              <p>Product price: <span id="order-price">120 TUB</span></p>
+              <p>Delivery price: 10.1 TUB</p>
+              <p>Total price: <span id="total-price">210.1 TUB</span></p>
+              <button class="add-to-cart">Add to Cart</button>
+          </div>
+      </div>
+    </section>
+
+  <!--------------------------- 10 page ------------------------------------>
+    <section id="bear">
+      <div class="product-section" data-name="bear" data-price="120.4"  >
+        <div class="image-container-dragon">
+              <img src="images/bear.jpg" alt="bear" id="product-image">
+          </div>
+          <div class="text-container-dragon">
+              <h2 id="product-name">bear</h2>
+              <p>Handmade Crochet Cat Pet Medallion</p>
+              <p class="price" id="product-price">120.4 TUB</p>
+              <div class="rating">
+                  <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="quantity-dragon">
+                  <button id="decrease-quantity">-</button>
+                  <span id="product-quantity">1</span>
+                  <button id="increase-quantity">+</button>
+              </div>
+              <h3>Order Summary</h3>
+              <p>Product price: <span id="order-price">120.4 TUB</span></p>
+              <p>Delivery price: 10.1 TUB</p>
+              <p>Total price: <span id="total-price">130.5 TUB</span></p>
+              <button class="add-to-cart">Add to Cart</button>
+          </div>
+      </div>
+    </section>
+
+  <!--------------------------- 11 page ------------------------------------>
+
 
     <section id="reviews">
       <div class="reviews">
@@ -323,6 +438,7 @@ function goToCart() {
 
 
 
+  <!--------------------------- 12 page ------------------------------------>
 
 
 
@@ -341,17 +457,14 @@ function goToCart() {
   </section>
 
 
+  <!---------------------------13 page ------------------------------------>
 
   <p id="visitor-count">عدد الزوار: 0</p>
-
 
 
   <footer>
     © 2024 Crochet Rory Store. All rights reserved.
   </footer>
-
-
-
 
 
 <script src="javascript.js"></script>

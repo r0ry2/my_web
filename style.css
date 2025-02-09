@@ -318,7 +318,7 @@ h2 {
 
 /* تنسيق القسم الرئيسي */
 #sectionـProduct {
-  padding: 40px 20px;
+  padding: 80px 20px;
   background-color: #f9f9f9; /* خلفية خفيفة */
 }
 
@@ -327,6 +327,7 @@ h2 {
   flex-wrap: wrap;
   gap: 20px; /* مسافة بين العناصر */
   justify-content: center; /* توسيط العناصر */
+  padding-top: 60px;
 }
 
 /* تنسيق كل بطاقة منتج */
@@ -337,6 +338,7 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px; /* عرض موحد للبطاقات */
   height: 600px;
+  
 
   text-align: center;
   padding: 20px;
@@ -503,102 +505,6 @@ h2 {
 
 /*---------------forth-----------------------*/
 
-#Orderـdetails {
-  padding: 20px;
-  background-color: #ffd8e5;
-}
-.section {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background: #eb90d3;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 1200px;
-}
-
-
-.image {
-  flex: 1;
-  max-width: 50%;
-}
-
-.image img {
-  width: 100%;
-  height: auto;
-  
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  color: #333;
-}
-
-.image-container img {
-  width: 90%;
-  border-radius: 10px;
-  height: 600px;
-}
-.image-container img {
-  width: 90%;
-  border-radius: 10px;
-  height: 600px;
-}
-.text-container {
-  flex: 1;
-  padding: 20px;
-}
-
-.text-container h2 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.text-container p {
-  color: #555;
-  line-height: 1.6;
-  margin: 10px 0;
-}
-
-.text-container .price {
-  font-weight: bold;
-  font-size: 24px;
-  color: #000;
-}
-
-.color-options {
-  display: flex;
-  gap: 10px;
-}
-
-.color {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.order-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #ff6f91;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.order-button:hover {
-  background-color: #e85c7d;
-}
-
-/*------------------five----------------------*/
-
-
 
 
 
@@ -739,11 +645,8 @@ h2 {
 
 /*------------six-----------------------------*/
 
-#Shopping-cart-dragon {
-  padding: 40px 20px;
-}
 
-.product-section-dragon {
+.product-section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -835,7 +738,7 @@ h2 {
   padding-top: 10px;
 }
 
-.confirm-button-dragon {
+.add-to-cart {
   background-color: #9e3490;
   color: #fff;
   border: none;
@@ -847,7 +750,7 @@ h2 {
   transition: background-color 0.3s;
 }
 
-.confirm-button-dragon:hover {
+.add-to-cart:hover {
   background-color: #7e2773;
 }
 
@@ -858,114 +761,7 @@ h2 {
 
 
 
-#cat_claw {
-  padding: 50px 20px;
-  display: flex;
-  justify-content: center;
-}
 
-.cat-claw-gloves {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: #eb90d3;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 1200px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.image-container-claw-gloves img {
-  width: 400px;
-  border-radius: 10px;
-  height: auto;
-}
-
-.text-container-claw-gloves {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.text-container-claw-gloves h2 {
-  font-size: 1.8rem;
-  color: #333;
-}
-
-.price {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #000;
-}
-
-.rating span {
-  font-size: 1.2em;
-  color: gold;
-}
-
-.quantity-claw-gloves {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.quantity-btn {
-  background: #ff6600;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.3s;
-}
-
-.quantity-btn:hover {
-  background: #e65c00;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.confirm-button-claw-gloves {
-  background: #28a745;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.confirm-button-claw-gloves:hover {
-  background: #218838;
-}
-
-/* تحسين التناسق للأجهزة الصغيرة */
-@media (max-width: 768px) {
-  .cat-claw-gloves {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .image-container-claw-gloves img {
-      width: 100%;
-      height: auto;
-  }
-
-  .text-container-claw-gloves {
-      padding: 10px;
-      text-align: center;
-  }
-}
 
 /*-----------------------------------*/
 
