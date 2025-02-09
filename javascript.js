@@ -168,18 +168,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', function() {
-          let product = this.closest('.product-section'); // البحث عن العنصر الأب الصحيح
-          let name = product.getAttribute('data-name');
-          let price = parseFloat(product.getAttribute('data-price'));
 
-          if (name && price) {
-              cart.push({ name, price });
-              localStorage.setItem('cart', JSON.stringify(cart));
-              alert('Product added to cart!');
-          } else {
-              console.error('Product data is missing!');
-          }
-      });
-  });
+document.querySelectorAll('.product-section').forEach(section => {
+    const priceElement = section.querySelector("#product-price");
+    const quantityElement = section.querySelector("#product-quantity");
+    const totalElement = section.querySelector("#total-price");
+    const deliveryPrice = 10.1;
+
+    const updateTotalPrice = () => {
+        const productPrice = parseFloat(priceElement.textContent);
+        const quantity = parseInt(quantityElement.textContent);
+        const totalPrice = (productPrice * quantity) + deliveryPrice;
+        totalElement.textContent = totalPrice.toFixed(1) + ' TUB';
+    };
+
+    section.querySelector("#increase-quantity").addEventListener('click', () => {
+        let quantity = parseInt(quantityElement.textContent);
+        quantity++;
+        quantityElement.textContent = quantity;
+        updateTotalPrice();
+    });
+
+    section.querySelector("#decrease-quantity").addEventListener('click', () => {
+        let quantity = parseInt(quantityElement.textContent);
+        if (quantity > 1) {
+            quantity--;
+            quantityElement.textContent = quantity;
+            updateTotalPrice();
+        }
+    });
+
+    section.querySelector(".add-to-cart").addEventListener('click', () => {
+        const name = section.dataset.name;
+        const quantity = parseInt(quantityElement.textContent);
+        const price = parseFloat(totalElement.textContent.split(' ')[0]); // الحصول على السعر الإجمالي
+        const item = { name, quantity, price }; // إضافة الكمية إلى العنصر
+        cart.push(item); // إضافة العنصر إلى السلة
+        localStorage.setItem('cart', JSON.stringify(cart)); // تحديث localStorage
+        alert(`Added ${quantity} of ${name} to cart at ${price.toFixed(1)} TUB`);
+    });
+
+    updateTotalPrice();
+});
