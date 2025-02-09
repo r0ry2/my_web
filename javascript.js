@@ -106,22 +106,7 @@ function toggleSidebar() {
 
 
 
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', function() {
-          let product = this.closest('.product-section'); // البحث عن العنصر الأب الصحيح
-          let name = product.getAttribute('data-name');
-          let price = parseFloat(product.getAttribute('data-price'));
 
-          if (name && price) {
-              cart.push({ name, price });
-              localStorage.setItem('cart', JSON.stringify(cart));
-              alert('Product added to cart!');
-          } else {
-              console.error('Product data is missing!');
-          }
-      });
-  });
 
 
 
@@ -182,3 +167,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+          let product = this.closest('.product-section'); // البحث عن العنصر الأب الصحيح
+          let name = product.getAttribute('data-name');
+          let price = parseFloat(product.getAttribute('data-price'));
+
+          if (name && price) {
+              cart.push({ name, price });
+              localStorage.setItem('cart', JSON.stringify(cart));
+              alert('Product added to cart!');
+          } else {
+              console.error('Product data is missing!');
+          }
+      });
+  });
