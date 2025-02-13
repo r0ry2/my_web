@@ -63,71 +63,14 @@ function toggleSidebar() {
 
 
 
-
-
-
-
-
-
-
-
-  document.querySelectorAll('.product-section').forEach(section => {
-      const priceElement = section.querySelector("#product-price");
-      const quantityElement = section.querySelector("#product-quantity");
-      const totalElement = section.querySelector("#total-price");
-      const deliveryPrice = 10.1;
-
-      let basePrice = parseFloat(section.getAttribute("data-price"));
-      let quantity = 1;
-
-      section.querySelector("#increase-quantity").addEventListener("click", function () {
-          quantity++;
-          updateTotal();
-      });
-
-      section.querySelector("#decrease-quantity").addEventListener("click", function () {
-          if (quantity > 1) {
-              quantity--;
-              updateTotal();
-          }
-      });
-
-      function updateTotal() {
-          quantityElement.textContent = quantity;
-          let totalPrice = (basePrice * quantity) + deliveryPrice;
-          totalElement.textContent = totalPrice.toFixed(2) + " TUB";
-      }
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // تخزين قيم نموذج الاتصال
   document.getElementById("submitForm").addEventListener("click", function () {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
-    console.log("Name:", name, "Email:", email, "Message:", message);
+    console.log("Name:", name, "Email:", email, "Message:", message);//يستخدم console.log لطباعة البيانات المدخلة في المتصفح (Developer Console).
     alert("Form submitted successfully!");
   });
-
-
-
-
-
-
 
 
 
@@ -143,7 +86,8 @@ document.addEventListener("DOMContentLoaded", function() {
   if (!visitCount) {
       visitCount = 1;
   } else {
-      visitCount = parseInt(visitCount) + 1; // زيادة العدد
+      visitCount = parseInt(visitCount) + 1; // زيادة العددإذا كان هناك عدد زيارات مسجل بالفعل، يتم تحويله إلى عدد (parseInt(visitCount)) وزيادته بمقدار 1.
+
   }
 
   // حفظ العدد المحدث في localStorage
@@ -151,8 +95,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // عرض العدد في الصفحة
   const visitorCountElem = document.getElementById("visitor-count");
-  if (visitorCountElem) {
-      visitorCountElem.textContent = `عدد الزوار: ${visitCount}`;
+  if (visitorCountElem) {//يتحقق مما إذا كان العنصر موجودًا في الصفحة (لمنع الأخطاء).
+
+      visitorCountElem.textContent = `Number of visitors: ${visitCount}`;
   }
 });
 
@@ -166,8 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
+//إضافة المنتجات
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 document.querySelectorAll('.product-section').forEach(section => {
@@ -176,38 +120,45 @@ document.querySelectorAll('.product-section').forEach(section => {
     const totalElement = section.querySelector("#total-price");
     const deliveryPrice = 10.1;
 
+    // 🔹 دالة للحصول على الكمية الحالية
+    const getQuantity = () => parseInt(quantityElement.textContent);//يحصل على العدد الموجود داخل #product-quantity (كمية المنتج في الصفحة) ويحوّله إلى عدد صحيح (Integer).
+
+
+    // 🔹 دالة لحساب السعر الإجمالي وتحديثه في الصفحة
     const updateTotalPrice = () => {
         const productPrice = parseFloat(priceElement.textContent);
-        const quantity = parseInt(quantityElement.textContent);
+        const quantity = getQuantity();
         const totalPrice = (productPrice * quantity) + deliveryPrice;
         totalElement.textContent = totalPrice.toFixed(1) + ' TUB';
     };
 
+    // 🔹 دالة لإضافة المنتج إلى السلة
+    const addToCart = () => {
+        const name = section.dataset.name;//يحصل على اسم المنتج من data-name المخزن في عنصر الـ HTML.
+        const quantity = getQuantity();
+        const price = parseFloat(totalElement.textContent.split(' ')[0]);
+        cart.push({ name, quantity, price });//إضافة المنتج إلى السلة:
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`Added ${quantity} of ${name} to cart at ${price.toFixed(1)} TUB`);//إظهار رسالة تأكيد للمستخدم
+    };
+
+    // 🔹 زيادة الكمية
     section.querySelector("#increase-quantity").addEventListener('click', () => {
-        let quantity = parseInt(quantityElement.textContent);
-        quantity++;
-        quantityElement.textContent = quantity;
+        quantityElement.textContent = getQuantity() + 1;
         updateTotalPrice();
     });
 
+    // 🔹 تقليل الكمية
     section.querySelector("#decrease-quantity").addEventListener('click', () => {
-        let quantity = parseInt(quantityElement.textContent);
-        if (quantity > 1) {
-            quantity--;
-            quantityElement.textContent = quantity;
+        if (getQuantity() > 1) {
+            quantityElement.textContent = getQuantity() - 1;
             updateTotalPrice();
         }
     });
 
-    section.querySelector(".add-to-cart").addEventListener('click', () => {
-        const name = section.dataset.name;
-        const quantity = parseInt(quantityElement.textContent);
-        const price = parseFloat(totalElement.textContent.split(' ')[0]); // الحصول على السعر الإجمالي
-        const item = { name, quantity, price }; // إضافة الكمية إلى العنصر
-        cart.push(item); // إضافة العنصر إلى السلة
-        localStorage.setItem('cart', JSON.stringify(cart)); // تحديث localStorage
-        alert(`Added ${quantity} of ${name} to cart at ${price.toFixed(1)} TUB`);
-    });
+    // 🔹 زر الإضافة إلى السلة
+    section.querySelector(".add-to-cart").addEventListener('click', addToCart);
 
+    // تحديث السعر عند تحميل الصفحة
     updateTotalPrice();
 });

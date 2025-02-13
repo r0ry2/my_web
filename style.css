@@ -29,6 +29,8 @@
   display: none; /* مخفي في البداية */
   font-size: 14px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 900;
+
 }
 #goToTopBtn:hover {
   background-color: #e28e8e;
@@ -315,7 +317,7 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px; /* عرض موحد للبطاقات */
+  width: 280px; /* عرض موحد للبطاقات */
   height: 600px;
   
 
@@ -420,7 +422,7 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 350px; /* حجم كل بطاقة منتج */
+  width: 300px; /* حجم كل بطاقة منتج */
   text-align: center;
   padding: 20px;
   height: 600px;
@@ -905,10 +907,7 @@ footer {
     }
   
     
-}
 
-
-@media only screen and (max-width:540px) {
   #goToTopBtn {
     bottom: 15px; /* أقرب للحافة */
     right: 5px; /* أقل ابتعادًا عن اليمين */
@@ -1087,8 +1086,6 @@ footer {
   
   }
 
-
-  @media (max-width: 768px) {
     .product-section {
       flex-direction: column; /* يجعل المنتجات تظهر كأعمدة بدلاً من صفوف */
       align-items: center;
