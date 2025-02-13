@@ -12,14 +12,15 @@ document.getElementById("findFavoriteBtn").addEventListener("click", function ()
   
   // التحكم في ظهور زر العودة للأعلى بناءً على التمرير
   window.onscroll = function () {
-    if (window.scrollY > 100) {
-      goToTopBtn.style.display = "block";
+    if (window.scrollY > 100) {// إذا تجاوز المستخدم 100 بكسل للأسفل، يتم إظهار الزر.
+
+      goToTopBtn.style.display = "block";// يظهر الزر عندما يتم التمرير لأسفل.
     } else {
       goToTopBtn.style.display = "none";
     }
   };
   // عند الضغط على زر العودة للأعلى
-  goToTopBtn.onclick = function () {
+  goToTopBtn.onclick = function () {//When the button is clicked, the code is executed.
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   
